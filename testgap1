@@ -1,0 +1,11 @@
+LoadPackage("grape");
+iskanjevelikih := function(s, M, i, t)
+local G,x,y;
+G := SL(2,s);
+while i > 0 do
+x := Random(G);
+y := Random(G);
+i := i-1;;
+if Diameter(CayleyGraph(G,[x,y])) > t then Add(M, [x,y]); fi; od;
+return M;
+end;
