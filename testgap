@@ -1,0 +1,11 @@
+LoadPackage("Grape");
+graf := function(s,M,i)
+local x,y,G;
+G:= SL(2,s);
+while i > 0 do
+x:= Random(G);
+y:= Random(G);
+i:= i-1;
+Add(M,Diameter(CayleyGraph(G,[x,y])));od;
+return M;
+end;
